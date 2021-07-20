@@ -25,43 +25,25 @@ section {
   padding: 20px;
 }
 
-#ideas img {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
 section.alternate-background {
   background-color: #00a699;
   color: #fff;
 }
 
-#host img {
-  width: 100%;
-}
-
-.item {
-  /* width: 100%; */
-  display: flex;
-  flex-direction: column;
-}
-
 main img {
-  /* width: 100%; */
-  display: flex;
-  flex-direction: column;
+  width: 100%;
 }
 
 /* ---  Groups & Items --- */
 
 .group {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .item {
   flex: 1;
-  margin: 10px;
+  margin:10px
 }
 
 .item-double {
@@ -71,8 +53,6 @@ main img {
 /* -------  Navigation ------- */
 
 header {
-  display: flex;
-  justify-content: space-between;
   background-color: #ff385c;
   padding: 20px 20px 0 20px;
   text-align: center;
@@ -80,29 +60,21 @@ header {
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 48px;
   color: #fff;
-}
-
-header {
-  display: flex;
-  justify-content: center;
-  padding: 0 30px;
-  flex-direction: column;
 }
 
 header nav ul {
   display: flex;
-  flex-direction: row;
   justify-content: center;
 }
 
 header nav ul li {
   list-style-type: none;
-  text-align: right;
 }
 
 header nav ul li a {
+  flex-direction: row;
   color: #fff;
   text-decoration: none;
   padding: 0 20px 0 0;
@@ -116,8 +88,15 @@ header nav ul li a:hover {
 /* -------  Search Form ------- */
 form {
   display: flex;
-  justify-content: space-evenly;
   flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid #ff385c;
+  padding: 10px;
+}
+
+.form-dis{
+  display: flex;
+  justify-content: space-between;
 }
 
 form label {
@@ -127,7 +106,7 @@ form label {
 form select,
 form input {
   margin-bottom: 20px;
-  width: 180px;
+  width: 65%;
 }
 
 form button {
@@ -137,12 +116,8 @@ form button {
   font-size: 24px;
   padding: 15px;
   width: 100%;
+  justify-content: center;
 }
-
-/* form div {
-  display: flex;
-  justify-content: space-evenly;
-} */
 
 /* -------  Footer ------- */
 
@@ -157,42 +132,63 @@ footer p {
 }
 
 /* -------  Media Query ------- */
-
 @media all and (min-width: 480px) {
   header {
-    display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     background-color: #ff385c;
-    padding: 20px 20px 0 20px;
-    text-align: center;
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 
-  form {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    border: 2px solid #ff385c;
+  .logo {
+    font-size: 72px;
+  }
+
+  header nav {
     padding: 10px;
   }
 
-  .item {
-    display: flex;
+  form {
     flex-direction: row;
   }
 
-  #about img {
-    flex-grow: 1;
-    width: 350px;
-    margin: 20px;
+  .group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-flow: row nowrap;
+    align-items: center;
   }
 
-  #about p {
-    flex-grow: 2;
-    padding-top: 60px;
+  .vacation {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .vacation .item {
+    flex-direction: column;
+    justify-content: flex-end;
   }
 
-  form label {
-    display: block;
+  .item label,
+  .item input,
+  .item select,
+  .item button {
+    display: flex;
+    width: 100%;
+  }
+
+  .grid-column {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  .grid-row {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
   }
 }
